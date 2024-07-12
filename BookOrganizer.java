@@ -56,11 +56,65 @@ public class BookOrganizer
     }
     
     /**
-     * this method remove a book from the list
+     * this method remove a book from the list introducing a position of 
+     * the book in the list
      */
-    public void removeBook(int position){
-        for(int i = 0 ; i < bookCollection.size() ; i++){
-            if (position )
+    public void removeBook(int position)
+    {
+        if (position < 0 || position >= bookCollection.size()) {
+            throw new IndexOutOfBoundsException("Position is out of range");
         }
+        bookCollection.remove(position);
+    
+    }
+    
+    /**
+     * this method remove a book from the list using the id of the book
+     */
+    public void removeBookId(String id){
+        //TOOO
+    }
+    
+    /**
+     * this method creates a array with a list of 
+     * books in the bookCollection 
+     */
+    public String[] listBook(){
+        //TODO
+        return null;
+    }
+    
+    /**
+     * search a book in the BookCollection using the title of that book
+     */
+    public void searchingByTitle(){
+        
+    }
+    
+    /**
+     * search a book in the BookCollection using the Author of that book
+     */
+    public void searchingByAuthor(){
+        
+    }
+    
+    /**
+     * Checks the invariant of the class.
+     * the bookCollection can´t be null
+     * the books in bookCollection can´t be invalid
+     * 
+     * @return true if the object's state is valid, else false
+     */
+    public boolean repOK(){
+        if(bookCollection == null){
+            return false;
+        }
+        for(Book libro : bookCollection){        
+            if(!libro.repOK()){
+                return false;
+            }
+        }
+        return true;
     }
 }
+
