@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.*;
+
 /**
  * this class represent a book organizer.
  * this is a list of books
@@ -16,11 +18,9 @@ public class BookOrganizer
      */
     public BookOrganizer()
     {
-        if(bookCollection == null){
-            throw new IllegalArgumentException("a list can´t be a null");
-        }
         //Arraylist of save a books
         bookCollection = new ArrayList<>();
+        assert repOK() : "invalid obj in constructor";
     }
 
     /**
@@ -35,6 +35,7 @@ public class BookOrganizer
             throw new IllegalArgumentException("a book is invalid");
         }
         bookCollection.add(newBook);
+        assert repOK() : "invalid obj in addBook method";
     }
     
     /**
@@ -53,6 +54,7 @@ public class BookOrganizer
             throw new IllegalArgumentException("a book is invalid");
         }
         bookCollection.add(position, newBook);
+        assert repOK() : "invalid obj in addBookIn method";
     }
     
     /**
@@ -65,14 +67,38 @@ public class BookOrganizer
             throw new IndexOutOfBoundsException("Position is out of range");
         }
         bookCollection.remove(position);
-    
+        assert repOK() : "invalid obj in removeBookId method";
     }
     
     /**
      * this method remove a book from the list using the id of the book
      */
-    public void removeBookId(String id){
-        //TOOO
+    public void removeBookId(int id) {
+        /*
+         * bookCollection.iterator() retorna un objeto Iterator<Book> 
+         * que se puede usar para recorrer la colección bookCollection.
+         * Un Iterator es una estructura que permite recorrer una 
+         * colección de elementos uno a uno.
+         */
+        Iterator<Book> iterator = bookCollection.iterator();
+        /*
+         * iterator.hasNext() verifica si hay más elementos en la 
+         * colección para iterar. Retorna true si hay más elementos 
+         * y false si no los hay. y se repite hasta que no haya mas
+         */
+        while (iterator.hasNext()) {
+            Book libro = iterator.next(); //obtener el siguiente elemento
+            if (libro.getId() == id) {
+                iterator.remove();
+                break; /* break
+                *interrumpe automaticamente el while luego de eliminar 
+                *el primer elemento con esa id, si se quisieran eliminar 
+                *mas elementos se podria omitir.
+                */
+                
+            }
+        }
+        assert repOK() : "invalid obj in removeBookId method";
     }
     
     /**
@@ -80,22 +106,93 @@ public class BookOrganizer
      * books in the bookCollection 
      */
     public String[] listBook(){
-        //TODO
-        return null;
+        String libros[] = new String[bookCollection.size()];
+        for(int i = 0 ; i < bookCollection.size() ; i++){
+            Book currLibro = bookCollection.get(i);
+            libros[i] = currLibro.getTitle() + " by: \"" + 
+                        currLibro.getAuthor();
+        }
+        return libros;
     }
     
     /**
-     * search a book in the BookCollection using the title of that book
+     * search a book in the BookCollection using the title of that book.
+     * 
+     * @param title The title of the book to search for.
+     * @return A string representation of the book if found, otherwise a 
+     * message indicating the book was not found.
      */
-    public void searchingByTitle(){
-        
+    public String searchingByTitle(String title){
+        for(int i = 0 ; i < bookCollection.size() ; i++){
+            Book libro = bookCollection.get(i);
+            String currLibro = libro.getTitle();
+            if(currLibro.equals(title)){
+                return libro.toString();
+            }
+        }
+        return"book not found";
+    }
+    
+    //este metodo a dif del de arriba te retorna el ob libro, no sus datos
+    /**
+     * Searches for a book in the BookCollection using the title of 
+     * that book.
+     *
+     * @param title The title of the book to search for.
+     * @return The book object if found, otherwise null.
+     */
+    public Book searchingObjByTitle(String title) {
+        for (int i = 0; i < bookCollection.size(); i++) {
+            Book libro = bookCollection.get(i);
+            String currLibro = libro.getTitle();
+            if (currLibro.equals(title)) {
+                return libro;
+            }
+        }
+        return null;
     }
     
     /**
      * search a book in the BookCollection using the Author of that book
      */
-    public void searchingByAuthor(){
-        
+    public String searchingByAuthor(String author){
+        for(int i = 0 ; i < bookCollection.size() ; i++){
+            Book libro = bookCollection.get(i);
+            String currLibro = libro.getTitle();
+            if(currLibro.equals(author)){
+                return libro.toString();
+            }
+        }
+        return"book not found";
+    }
+    
+    /**
+     * this method is for search with a critery, auhor, title, id. 
+     * evrething are searching from this method
+     * 
+     */
+    public void searchWithCritery(){
+        //TODO
+    }
+    
+    /**
+     * this method is for organizes the books for author.
+     * this method add the books by the same author to the array 
+     * and print that
+     * 
+     */
+    //usar hashMap
+    public void organizedForAuthor(){
+        //TODO
+    }
+    
+    /**
+     * this method search and remove copy of duplicate book, and show
+     * if no exist nothing book duplicate
+     */
+    //usar hashSet
+    public void noDuplicates(){
+        //TODO
     }
     
     /**
