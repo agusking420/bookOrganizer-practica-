@@ -166,34 +166,7 @@ public class BookOrganizer
         return"book not found";
     }
     
-    /**
-     * this method is for search with a critery, auhor, title, id. 
-     * evrething are searching from this method
-     * 
-     */
-    public void searchWithCritery(){
-        //TODO
-    }
     
-    /**
-     * this method is for organizes the books for author.
-     * this method add the books by the same author to the array 
-     * and print that
-     * 
-     */
-    //usar hashMap
-    public void organizedForAuthor(){
-        //TODO
-    }
-    
-    /**
-     * this method search and remove copy of duplicate book, and show
-     * if no exist nothing book duplicate
-     */
-    //usar hashSet
-    public void noDuplicates(){
-        //TODO
-    }
     
     /**
      * Checks the invariant of the class.
