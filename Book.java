@@ -78,7 +78,7 @@ public class Book
     public String getAuthor()
     {
         System.out.println("author of this book is " + author);
-        return author;
+        return this.author;
     }
     
     /**

@@ -1,8 +1,13 @@
+import java.util.*;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * this class have the same funtion to the BookOrganizer class, but 
@@ -123,8 +128,45 @@ public class MapBookOrganizer
      * 
      */
     //usar hashMap
-    public void organizedForAuthor(){
-        //TODO
+    public void organizedForAuthor() {
+        /* crea una lista de arreglos desde el mapa
+         * el parametro mapaLibrary.values() del ArrayList es porque el array va a
+         * guardar los values del mapa es decir los libros
+         * esto lo hace porque Collections.sort esta hecho para trabajar con listas
+         * no con mapas
+         */
+        List<Book> books = new ArrayList<>(mapaLibrary.values());
+
+        /* ordena los libros por autor en modo alfabetico
+         * Collection.sort ordena la lista de libros.
+         * importa el comparator para que compare books con book y ver cual debe 
+         * ir antes, sirve para definir el ordenamiento de los objetos
+         */
+        Collections.sort(books, new Comparator<Book>() {
+            @Override //esto quiere decir que un metodo esta sobreescribiendo otro
+            //En este caso, indica que el método compare está sobrescribiendo el 
+            //método abstracto compare de la interfaz Comparator.
+            public int compare(Book b1, Book b2) { //metodo de la clase comparator
+                return b1.getAuthor().compareTo(b2.getAuthor());
+            }
+        /*
+         * lo de arriba se podria escribr de forma mas compacta usando lambda
+         * Collections.sort(books, (b1, b2) -> b1.getAuthor().compareTo(b2.getAuthor()));
+
+         */
+        }); //notar que esta todo dentro del parametro de Collection.sort
+
+        // crea un nuevo mapa y agrega todos los libros ordenados
+        Map<Integer, Book> sortedMap = new LinkedHashMap<>();
+        for (Book book : books) { //itera dentro del ArrayList books creado arriba
+            sortedMap.put(book.getId(), book); //y agrega todo en este nuevo mapa ordenado 
+            //aca el valor de key es book.getId() ya que usa la ID del libro 
+        }
+
+        //reemplaza el mapa original con el nuevo mapa ordenado
+        mapaLibrary = sortedMap;
+
+        assert repOK() : "object invalid in organizedForAuthor method";
     }
     
     
@@ -203,4 +245,3 @@ public class MapBookOrganizer
         return true;
         }   
  }
-

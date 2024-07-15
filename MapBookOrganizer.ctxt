@@ -1,0 +1,33 @@
+#BlueJ class context
+comment0.target=MapBookOrganizer
+comment0.text=\r\n\ this\ class\ have\ the\ same\ funtion\ to\ the\ BookOrganizer\ class,\ but\ \r\n\ using\ a\ map\ collection.\r\n\ this\ class\ is\ a\ collection\ of\ books\ and\ every\ books\ have\ her\ key(ID).\r\n\ \r\n\ @author\ R.\ Morosi\ \r\n\ @version\ 12/07\r\n
+comment1.params=
+comment1.target=MapBookOrganizer()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MapBookOrganizer\r\n
+comment10.params=
+comment10.target=boolean\ repOK()
+comment10.text=\r\n\ Checks\ the\ invariant\ of\ the\ class.\r\n\ the\ MapBookOrganizer\ can\u00B4t\ be\ null\r\n\ the\ books\ in\ MapBookOrganizer\ can\u00B4t\ be\ invalid\r\n\ \r\n\ @return\ true\ if\ the\ object's\ state\ is\ valid,\ else\ false\r\n
+comment2.params=key\ book
+comment2.target=void\ putBook(int,\ Book)
+comment2.text=\r\n\ method\ to\ add\ a\ book\ to\ the\ collection\r\n\ \r\n\ @param\ key,\ key\ is\ a\ ID\ of\ book\r\n\ @param\ book,\ is\ a\ object\ book\r\n
+comment3.params=book
+comment3.target=void\ pubBookKeyless(Book)
+comment3.text=\r\n\ method\ to\ add\ a\ book\ to\ the\ collection\ when\ book\ have\ id\r\n\ key\ is\ a\ ID\ of\ book\r\n\ \r\n\ @param\ book,\ is\ a\ object\ book\r\n
+comment4.params=key
+comment4.target=void\ removeBook(int)
+comment4.text=\r\n\ method\ to\ remove\ a\ book\ to\ the\ collection\ using\ key(ID)\ of\ book\r\n\ \r\n\ @param\ key,\ key\ is\ a\ ID\ of\ book\r\n
+comment5.params=key
+comment5.target=java.lang.String\ searchingById(int)
+comment5.text=\r\n\ puedo\ crear\ un\ hashmap\ donde\ a\ cada\ libro\ le\ asigne\ una\ clave\ y\ \r\n\ esa\ clave\ sea\ la\ id\r\n\ map<integer,\ Book>\ mapaLibrary\ \=\ new\ hashMap<>();\r\n
+comment6.params=key\ title\ author\ id
+comment6.target=void\ searchWithCritery(int,\ java.lang.String,\ java.lang.String,\ int)
+comment6.text=\r\n\ this\ method\ is\ for\ search\ with\ a\ critery,\ auhor,\ title,\ id.\ \r\n\ evrething\ are\ searching\ from\ this\ method\r\n\ \r\n
+comment7.params=
+comment7.target=void\ organizedForAuthor()
+comment7.text=\r\n\ this\ method\ is\ for\ organizes\ the\ books\ for\ author.\r\n\ this\ method\ add\ the\ books\ by\ the\ same\ author\ to\ the\ array\ \r\n\ and\ print\ that\r\n\ \r\n
+comment8.params=b1\ b2
+comment8.target=int\ compare(Book,\ Book)
+comment9.params=
+comment9.target=void\ noDuplicates()
+comment9.text=\r\n\ this\ method\ search\ and\ remove\ copy\ of\ duplicate\ book,\ and\ show\r\n\ if\ no\ exist\ nothing\ book\ duplicate\r\n
+numComments=11

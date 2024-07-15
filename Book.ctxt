@@ -1,0 +1,37 @@
+#BlueJ class context
+comment0.target=Book
+comment0.text=\r\n\ This\ class\ reprecents\ a\ book.\r\n\ contains\ autor,\ title,\ id,and\ number\ of\ pages.\ \r\n\ \r\n\ @author\ R.\ Morosi.\ \r\n\ @version\ 11/07/24.\r\n
+comment1.params=author\ title\ id\ cantPages
+comment1.target=Book(java.lang.String,\ java.lang.String,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Book\r\n\ creates\ a\ book\ object\ with\ parameters\ provided\ by\ user\r\n\ author\ can\u00B4t\ be\ null\ or\ void,\ in\ this\ case\ author\ is\ "unknow",\ \r\n\ title\ can\u00B4t\ be\ null\ or\ void,\ in\ this\ case\ title\ is\ "unknow",\ \r\n\ id\ and\ cantPages\ can\u00B4t\ be\ <\=0.\r\n\ \r\n\ @param\ author,\ is\ a\ author\ of\ book\r\n\ @param\ title,\ is\ a\ title\ of\ book\r\n\ @param\ id,\ is\ a\ id\ of\ book\ \r\n\ @param\ cantPages,\ is\ a\ cant\ of\ Pages\ in\ a\ book\r\n
+comment10.params=
+comment10.target=java.lang.String\ toString()
+comment10.text=\r\n\ this\ method\ print\ all\ data\ of\ a\ book\r\n\ \r\n\ @return\ A\ string\ representation\ of\ the\ book\ \r\n
+comment11.params=
+comment11.target=boolean\ repOK()
+comment11.text=\r\n\ Checks\ the\ invariant\ of\ the\ class.\r\n\ Author\ and\ title\ can't\ be\ null\ or\ empty.\ Book\ ID\ and\ pages\ \r\n\ can't\ be\ <\=\ 0.\r\n\ \r\n\ @return\ true\ if\ the\ object's\ state\ is\ valid,\ else\ false\r\n
+comment2.params=
+comment2.target=java.lang.String\ getTitle()
+comment2.text=\r\n\ this\ method\ gets\ the\ title\ of\ the\ book,\ prints\ a\ message\ with\ \r\n\ the\ title.\r\n\r\n\ @return\ the\ title\ of\ the\ book\ \r\n
+comment3.params=
+comment3.target=java.lang.String\ getAuthor()
+comment3.text=\r\n\ this\ method\ gets\ the\ author\ of\ the\ book,\ and\ print\ a\ message\ \r\n\ with\ the\ author.\r\n\ \r\n\ @return\ the\ author\ of\ the\ book\ \r\n
+comment4.params=
+comment4.target=int\ getId()
+comment4.text=\r\n\ this\ method\ gets\ the\ ID\ of\ book,and\ print\ a\ message\ with\ the\ ID.\r\n\ \r\n\ @return\ the\ ID\ of\ the\ book\r\n
+comment5.params=
+comment5.target=int\ getPages()
+comment5.text=\r\n\ this\ method\ gets\ the\ pages\ of\ book,\ and\ print\ a\ message\ with\ \r\n\ the\ number\ of\ pages.\r\n\ \r\n\ @return\ the\ number\ of\ pages\ in\ the\ boook\ \r\n
+comment6.params=title
+comment6.target=void\ setTitle(java.lang.String)
+comment6.text=\r\n\ this\ method\ sets\ a\ new\ title\ for\ the\ book.\r\n\ the\ new\ title\ can\u00B4t\ be\ null\ or\ empty\r\n\ \r\n\ @param\ title,\ title\ of\ the\ book\r\n
+comment7.params=author
+comment7.target=void\ setAuthor(java.lang.String)
+comment7.text=\r\n\ this\ method\ sets\ a\ new\ author\ for\ the\ book.\r\n\ the\ new\ author\ can\u00B4t\ be\ null\ or\ empty\r\n\ \r\n\ @param\ author,\ author\ of\ the\ book\r\n
+comment8.params=id
+comment8.target=void\ setId(int)
+comment8.text=\r\n\ this\ method\ sets\ a\ new\ ID\ for\ the\ book.\r\n\ new\ ID\ can\u00B4t\ be\ <\=\ 0\r\n\ \r\n\ @param\ id,\ the\ ID\ of\ the\ book\r\n
+comment9.params=pages
+comment9.target=void\ setPages(int)
+comment9.text=\r\n\ this\ method\ sets\ a\ new\ number\ of\ pages\ for\ the\ book.\r\n\ new\ numer\ of\ pages\ can\u00B4t\ be\ <\=\ 0\r\n\ \r\n\ @param\ pages,\ number\ of\ the\ pages\ in\ the\ book\r\n
+numComments=12

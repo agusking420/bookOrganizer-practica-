@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=BookTest
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ testGetId()
+comment3.params=
+comment3.target=void\ testGetTitle()
+comment4.params=
+comment4.target=void\ testGetAuthor()
+comment5.params=
+comment5.target=void\ testSetTitle()
+comment6.params=
+comment6.target=void\ testSetAuthor()
+comment7.params=
+comment7.target=void\ testRepOK()
+numComments=8
